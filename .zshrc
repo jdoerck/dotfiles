@@ -16,6 +16,7 @@ export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster"
+PROMPT=">>"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -125,29 +126,3 @@ source $ZSH/oh-my-zsh.sh
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-
-iReviewGetLogs() {
-	thePath='/var/log/tomcat7/catalina.out'
-	today=$(date +%Y%m%d-%H_%M_%S)
-	cd /Users/jdoerck/Desktop
-
-	if [ "$1" = "stage" ]
-		then
-			scp jdoerck@ws290.phx1.cbsig.net:$thePath $today.ireviewStage.catalina.out
-		else
-			scp jdoerck@ws252.phx1.cbsig.net:$thePath .
-			mv catalina.out ws252-catalina.out
-			scp jdoerck@ws286.phx1.cbsig.net:$thePath .
-			mv catalina.out ws286-catalina.out
-			scp jdoerck@ws287.phx1.cbsig.net:$thePath .
-			mv catalina.out ws287-catalina.out
-			scp jdoerck@ws288.phx1.cbsig.net:$thePath .
-			mv catalina.out ws288-catalina.out
-
-			tar -cf - ws252-catalina.out ws286-catalina.out ws287-catalina.out ws288-catalina.out | gzip > $today.ireview.catalina.out.tar.gz
-			rm *.out
-	fi
-
-
-}
