@@ -1,0 +1,13 @@
+fresh freshshell/fresh bin/fresh --bin
+
+fresh jdoerck/dotfiles .macos --file
+
+fresh jdoerck/dotfiles .gitignore --file
+fresh jdoerck/dotfiles .gitconfig --file
+
+fresh jdoerck/dotfiles .zshrc --file=zsh/zsh-jdoerck.zsh
+fresh jdoerck/dotfiles fresh.sh --file=zsh/zsh-fresh.zsh
+
+fresh jdoerck/dotfiles app/symfony.zsh --file=zsh/zsh-app.zsh
+
+fresh .zshrc --file
