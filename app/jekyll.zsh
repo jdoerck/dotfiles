@@ -17,3 +17,7 @@ jekyllNew() {
 jekyllNewTheme() {
   bundle exec jekyll new-theme
 }
+
+jekyllBuild() {
+  bundle exec jekyll build $1
+}
