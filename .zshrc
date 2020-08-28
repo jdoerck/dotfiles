@@ -1,6 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$HOME/.rvm/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export PATH="$HOME/.symfony/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
 
 source ~/.fresh/build/shell.sh
 source /usr/local/opt/chruby/share/chruby/chruby.sh
